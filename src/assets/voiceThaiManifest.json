@@ -1,0 +1,476 @@
+{
+  "source": "ElevenLabs Dubbing",
+  "generatedAt": "2026-10-26T00:21:15.784Z",
+  "clips": {
+    "Abrams": {
+      "selected": {
+        "select_01.opus": "vo_th/Abrams/select_01.flac"
+      }
+    },
+    "Mina": {
+      "selected": {
+        "select_01.opus": "vo_th/Mina/select_01.flac",
+        "select_02.opus": "vo_th/Mina/select_02.flac"
+      }
+    },
+    "Apollo": {
+      "selected": {
+        "select_01.opus": "vo_th/Apollo/select_01.flac"
+      },
+      "unselected": {
+        "unselect_01.opus": "vo_th/Apollo/unselect_01.flac"
+      }
+    },
+    "Bebop": {
+      "selected": {
+        "select_01.opus": "vo_th/Bebop/select_01.flac"
+      }
+    },
+    "Doorman": {
+      "selected": {
+        "select_10.opus": "vo_th/Doorman/select_10.flac",
+        "select_09.opus": "vo_th/Doorman/select_09.flac"
+      }
+    },
+    "Drifter": {
+      "selected": {
+        "select_01.opus": "vo_th/Drifter/select_01.flac"
+      }
+    },
+    "Dynamo": {
+      "selected": {
+        "select_01.opus": "vo_th/Dynamo/select_01.flac"
+      }
+    },
+    "Holliday": {
+      "selected": {
+        "select_01.opus": "vo_th/Holliday/select_01.flac"
+      }
+    },
+    "Vindicta": {
+      "selected": {
+        "select_01.opus": "vo_th/Vindicta/select_01.flac",
+        "select_02.opus": "vo_th/Vindicta/select_02.flac"
+      }
+    },
+    "Rem": {
+      "selected": {
+        "select_02.opus": "vo_th/Rem/select_02.flac"
+      }
+    },
+    "Graves": {
+      "selected": {
+        "select_03.opus": "vo_th/Graves/select_03.flac",
+        "select_04.opus": "vo_th/Graves/select_04.flac"
+      }
+    },
+    "Paradox": {
+      "selected": {
+        "select_01.opus": "vo_th/Paradox/select_01.flac"
+      }
+    },
+    "Haze": {
+      "selected": {
+        "select_01.opus": "vo_th/Haze/select_01.flac"
+      }
+    },
+    "Silver": {
+      "selected": {
+        "select_01.opus": "vo_th/Silver/select_01.flac"
+      }
+    }
+  },
+  "transcripts": {
+    "Abrams": {
+      "selected": {
+        "select_01.opus": {
+          "projectId": "proj_4601m5tnhmr4f40s94070p5ss2x1",
+          "languageId": "lang_0001m5tnhmr5f3nr2424tyfvjfhg",
+          "generatedAt": "2026-10-25T23:15:30.150Z",
+          "thai": [
+            "ไม่ต้องห่วง ฉันจัดการเอง"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.140",
+              "end": "00:00:02.280",
+              "text": "ไม่ต้องห่วง ฉันจัดการเอง"
+            }
+          ]
+        }
+      }
+    },
+    "Mina": {
+      "selected": {
+        "select_01.opus": {
+          "projectId": "proj_4201m5tnxkxtfvx89g35sj1e6t7w",
+          "languageId": "lang_6701m5tnxkxvexyv7zpk9cxnyvb5",
+          "generatedAt": "2026-10-25T23:22:02.762Z",
+          "thai": [
+            "หวังว่าจะได้ร่วมงานกับเลดี้ ไกสต์นะ ตัวแม่เลยคนนี้"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.180",
+              "end": "00:00:03.180",
+              "text": "หวังว่าจะได้ร่วมงานกับเลดี้ ไกสต์นะ ตัวแม่เลยคนนี้"
+            }
+          ]
+        },
+        "select_02.opus": {
+          "projectId": "proj_3701m5ts97gdfytam4h9zsyfsy7z",
+          "languageId": "lang_6101m5ts97geef3scqf2zfhx9mav",
+          "generatedAt": "2026-10-26T00:20:49.455Z",
+          "thai": [
+            "นักเขียนถ้าไม่ทำแบบนี้ ก็ต้องไปสิงในซาลอนแวมไพร์งี่เง่าพวกนั้น",
+            "บอกเลยนะ ฉันไม่คิดจะไปทนฟังเพล งฮาร์ปซิคอร์ดตั้งหกชั่วโมงหรอก"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.000",
+              "end": "00:00:03.277",
+              "text": "นักเขียนถ้าไม่ทำแบบนี้ ก็ต้องไปสิงในซาลอนแวมไพร์งี่เง่าพวกนั้น"
+            },
+            {
+              "start": "00:00:03.360",
+              "end": "00:00:06.889",
+              "text": "บอกเลยนะ ฉันไม่คิดจะไปทนฟังเพล งฮาร์ปซิคอร์ดตั้งหกชั่วโมงหรอก"
+            }
+          ]
+        }
+      }
+    },
+    "Apollo": {
+      "selected": {
+        "select_01.opus": {
+          "projectId": "proj_0601m5tp3jf0frca51wfq8h7f7bk",
+          "languageId": "lang_6501m5tp3jf1fgk9wgzpsy2vaaff",
+          "generatedAt": "2026-10-25T23:25:23.361Z",
+          "thai": [
+            "พ่อไม่ได้คาดหวังในตัวผมสูงไปหรอก แค่คาดหวังให้มันสมน้ำสมเนื้อต่างหาก",
+            "ก็แหม ในเมื่อเราเก่งที่สุดแล้ว จะไม่ให้หวังว่าจะสำเร็จได้ยังไงล่ะ"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.120",
+              "end": "00:00:04.420",
+              "text": "พ่อไม่ได้คาดหวังในตัวผมสูงไปหรอก แค่คาดหวังให้มันสมน้ำสมเนื้อต่างหาก"
+            },
+            {
+              "start": "00:00:05.020",
+              "end": "00:00:08.785",
+              "text": "ก็แหม ในเมื่อเราเก่งที่สุดแล้ว จะไม่ให้หวังว่าจะสำเร็จได้ยังไงล่ะ"
+            }
+          ]
+        }
+      },
+      "unselected": {
+        "unselect_01.opus": {
+          "projectId": "proj_2101m5tsa1v0fs98dmk5bva6k8v8",
+          "languageId": "lang_3201m5tsa1v1e47tbqp7xxzx398v",
+          "generatedAt": "2026-10-26T00:21:15.784Z",
+          "thai": [
+            "โทษทีนะ โดดซ้อมฟันดาบไม่ได้จริง ๆ"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.080",
+              "end": "00:00:02.180",
+              "text": "โทษทีนะ โดดซ้อมฟันดาบไม่ได้จริง ๆ"
+            }
+          ]
+        }
+      }
+    },
+    "Bebop": {
+      "selected": {
+        "select_01.opus": {
+          "projectId": "proj_1501m5tp44hcfah9cvrn8w5pq0as",
+          "languageId": "lang_6701m5tp44hdea8bf61vmxzj50sd",
+          "generatedAt": "2026-10-25T23:25:36.256Z",
+          "thai": [
+            "ผู้สร้างต้องการความช่วยเหลือจากฉัน และฉันจะไม่ทำให้เธอผิดหวัง"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.060",
+              "end": "00:00:03.589",
+              "text": "ผู้สร้างต้องการความช่วยเหลือจากฉัน และฉันจะไม่ทำให้เธอผิดหวัง"
+            }
+          ]
+        }
+      }
+    },
+    "Doorman": {
+      "selected": {
+        "select_10.opus": {
+          "projectId": "proj_6801m5tp4h4seb4rna6sbbmmjpaq",
+          "languageId": "lang_6101m5tp4h4te6ssrewppq27abhm",
+          "generatedAt": "2026-10-25T23:25:49.302Z",
+          "thai": [
+            "อย่ามองข้ามความช่วยเหลือเป็นอันขาดเชียวนะ"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.000",
+              "end": "00:00:02.540",
+              "text": "อย่ามองข้ามความช่วยเหลือเป็นอันขาดเชียวนะ"
+            }
+          ]
+        },
+        "select_09.opus": {
+          "projectId": "proj_8601m5ts9mx9f94ba31k914ewt23",
+          "languageId": "lang_5101m5ts9mxaf1svz1tjaz3npy26",
+          "generatedAt": "2026-10-26T00:21:02.790Z",
+          "thai": [
+            "นิวยอร์กนี่มีเสน่ห์น่าหลงใหลเนอะว่าไหม? เราไม่มีทางรู้เลยว่าจะได้เจอใครบ้าง"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.120",
+              "end": "00:00:04.500",
+              "text": "นิวยอร์กนี่มีเสน่ห์น่าหลงใหลเนอะว่าไหม? เราไม่มีทางรู้เลยว่าจะได้เจอใครบ้าง"
+            }
+          ]
+        }
+      }
+    },
+    "Drifter": {
+      "selected": {
+        "select_01.opus": {
+          "projectId": "proj_8301m5tp4xv5e1wbfrss2n77csm0",
+          "languageId": "lang_7201m5tp4xv6ewtthc7ae59t9bkj",
+          "generatedAt": "2026-10-25T23:26:08.132Z",
+          "thai": [
+            "ข้าไม่เคยเห็นว่าชื่อมันจำเป็นตรงไหน",
+            "ชื่อน่ะ มีไว้ให้คนที่อยากให้คนอื่นจดจำ",
+            "ส่วนข้าเหรอ?",
+            "การมีอยู่ของข้าก็เหมือ นแรงโน้มถ่วงหรือกาลเวลา",
+            "คือสิ่งนามธรรมที่เจ้าห วาดกลัวแต่ไม่อาจหนีพ้น",
+            "ข้าก็แค่เป็นอย่างที่เป็น"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.090",
+              "end": "00:00:02.430",
+              "text": "ข้าไม่เคยเห็นว่าชื่อมันจำเป็นตรงไหน"
+            },
+            {
+              "start": "00:00:03.350",
+              "end": "00:00:05.870",
+              "text": "ชื่อน่ะ มีไว้ให้คนที่อยากให้คนอื่นจดจำ"
+            },
+            {
+              "start": "00:00:07.030",
+              "end": "00:00:07.863",
+              "text": "ส่วนข้าเหรอ?"
+            },
+            {
+              "start": "00:00:09.590",
+              "end": "00:00:12.690",
+              "text": "การมีอยู่ของข้าก็เหมือ นแรงโน้มถ่วงหรือกาลเวลา"
+            },
+            {
+              "start": "00:00:13.410",
+              "end": "00:00:16.630",
+              "text": "คือสิ่งนามธรรมที่เจ้าห วาดกลัวแต่ไม่อาจหนีพ้น"
+            },
+            {
+              "start": "00:00:18.250",
+              "end": "00:00:20.210",
+              "text": "ข้าก็แค่เป็นอย่างที่เป็น"
+            }
+          ]
+        }
+      }
+    },
+    "Dynamo": {
+      "selected": {
+        "select_01.opus": {
+          "projectId": "proj_6301m5tp5g57f78vqbk460szjp54",
+          "languageId": "lang_2101m5tp5g58frns7abnzqsb675r",
+          "generatedAt": "2026-10-25T23:26:21.472Z",
+          "thai": [
+            "เกรดี้รอไปก่อน"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.020",
+              "end": "00:00:00.900",
+              "text": "เกรดี้รอไปก่อน"
+            }
+          ]
+        }
+      }
+    },
+    "Holliday": {
+      "selected": {
+        "select_01.opus": {
+          "projectId": "proj_3801m5tp5x81fd88rff7tbgwyafy",
+          "languageId": "lang_5301m5tp5x82fttttjtjvsvgnyb9",
+          "generatedAt": "2026-10-25T23:26:34.153Z",
+          "thai": [
+            "ให้ตายสิ เกลียดเมืองนี้ชะมัด"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.060",
+              "end": "00:00:01.707",
+              "text": "ให้ตายสิ เกลียดเมืองนี้ชะมัด"
+            }
+          ]
+        }
+      }
+    },
+    "Vindicta": {
+      "selected": {
+        "select_01.opus": {
+          "projectId": "proj_7201m5tqn2zcf8jvds2ddpaeps6n",
+          "languageId": "lang_7001m5tqn2zdf8f9tb8hczvh7bjy",
+          "generatedAt": "2026-10-25T23:52:25.691Z",
+          "thai": [
+            "พวกสาวกของเฮย์ธอร์นจะต้องช ดใช้ให้กับความผิดของพวกมัน"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.040",
+              "end": "00:00:03.099",
+              "text": "พวกสาวกของเฮย์ธอร์นจะต้องช ดใช้ให้กับความผิดของพวกมัน"
+            }
+          ]
+        },
+        "select_02.opus": {
+          "projectId": "proj_1801m5trwa51efv8a5mf5smy799c",
+          "languageId": "lang_5601m5trwa52f2s8d9jbpx1rvqhx",
+          "generatedAt": "2026-10-26T00:13:45.803Z",
+          "thai": [
+            "ความยุติธรรมมันก็แค่เรื่องเพ้อ ฝันของพวกที่ไม่กล้าพอจะแก้แค้น"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.040",
+              "end": "00:00:03.740",
+              "text": "ความยุติธรรมมันก็แค่เรื่องเพ้อ ฝันของพวกที่ไม่กล้าพอจะแก้แค้น"
+            }
+          ]
+        }
+      }
+    },
+    "Rem": {
+      "selected": {
+        "select_02.opus": {
+          "projectId": "proj_4501m5tqnmx6endbn9sfh8smrq0n",
+          "languageId": "lang_8101m5tqnmx7ecqvmxn0qymysgwz",
+          "generatedAt": "2026-10-25T23:52:38.455Z",
+          "thai": [
+            "ฉันอยากกลับบ้านแล้ว"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.100",
+              "end": "00:00:01.240",
+              "text": "ฉันอยากกลับบ้านแล้ว"
+            }
+          ]
+        }
+      }
+    },
+    "Graves": {
+      "selected": {
+        "select_03.opus": {
+          "projectId": "proj_9801m5tqp1dzevz8gc253j63ea3t",
+          "languageId": "lang_9701m5tqp1e0e50808fjt53c9ccz",
+          "generatedAt": "2026-10-25T23:52:51.536Z",
+          "thai": [
+            "ช่วงนี้พวกคนตายชักจะเรี ยกร้องเยอะเกินไปแล้วนะ"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.080",
+              "end": "00:00:02.727",
+              "text": "ช่วงนี้พวกคนตายชักจะเรี ยกร้องเยอะเกินไปแล้วนะ"
+            }
+          ]
+        },
+        "select_04.opus": {
+          "projectId": "proj_0201m5trmhj5ekbb8j5cd9m8q3y7",
+          "languageId": "lang_3701m5trmhj6fvgsa1q13j23xkvx",
+          "generatedAt": "2026-10-26T00:09:30.804Z",
+          "thai": [
+            "แบบนี้น่าจะทำให้อาจารย์ดีใจนะ"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.000",
+              "end": "00:00:01.706",
+              "text": "แบบนี้น่าจะทำให้อาจารย์ดีใจนะ"
+            }
+          ]
+        }
+      }
+    },
+    "Paradox": {
+      "selected": {
+        "select_01.opus": {
+          "projectId": "proj_3701m5tqpe8jem0bs6qm8njmqk59",
+          "languageId": "lang_7101m5tqpe8kfzf9dbttm30b0d18",
+          "generatedAt": "2026-10-25T23:53:04.797Z",
+          "thai": [
+            "\"เมื่อถึงเวลา ทุกคนก็ต้องตาย ปืนก็แค่ทำให้มันเร็วขึ้น\""
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.080",
+              "end": "00:00:03.660",
+              "text": "\"เมื่อถึงเวลา ทุกคนก็ต้องตาย ปืนก็แค่ทำให้มันเร็วขึ้น\""
+            }
+          ]
+        }
+      }
+    },
+    "Haze": {
+      "selected": {
+        "select_01.opus": {
+          "projectId": "proj_2201m5tr2wehejt9ag7c1bwqpe6p",
+          "languageId": "lang_8101m5tr2wejfbqbqrjcfps6j0v8",
+          "generatedAt": "2026-10-25T23:59:57.751Z",
+          "thai": [
+            "พวกนั้นไม่มีทางรู้ตัวหรอก"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.060",
+              "end": "00:00:01.640",
+              "text": "พวกนั้นไม่มีทางรู้ตัวหรอก"
+            }
+          ]
+        }
+      }
+    },
+    "Silver": {
+      "selected": {
+        "select_01.opus": {
+          "projectId": "proj_3101m5tqswk3fvmrdxarendtq2p8",
+          "languageId": "lang_7901m5tqswk4ev7bz7yrnffqd0d4",
+          "generatedAt": "2026-10-25T23:54:58.088Z",
+          "thai": [
+            "ฟังนะ ฉันต้องหาไรทำฆ่าเวลารถติดแถวมิดทาวน์ จะให้อัญเชิญเทพโบราณหรือซักผ้าดีล่ะ",
+            "แล้วฉันก็ไม่มีอารมณ์มานั่งพับผ้าห่วย ๆ ซะด้วยสิ"
+          ],
+          "cues": [
+            {
+              "start": "00:00:00.080",
+              "end": "00:00:04.677",
+              "text": "ฟังนะ ฉันต้องหาไรทำฆ่าเวลารถติดแถวมิดทาวน์ จะให้อัญเชิญเทพโบราณหรือซักผ้าดีล่ะ"
+            },
+            {
+              "start": "00:00:04.760",
+              "end": "00:00:07.466",
+              "text": "แล้วฉันก็ไม่มีอารมณ์มานั่งพับผ้าห่วย ๆ ซะด้วยสิ"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

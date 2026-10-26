@@ -34,6 +34,24 @@
         "lore": "A land of beauty, tradition and conflict; North Ixia is no stranger to brutal political violence. So when Apollo was told that it was for his own safety he was being sent to New York for school, he knew the situation was serious.\n\nAdjusting to life at Blackmore Academy didn’t come easy to Apollo. His school was supposed to be filled with The Cursed Apple’s best and brightest but all he saw, with few exceptions, was a sea of aggressive mediocrity. Electing not to waste his time with frivolous things like parties and dances, he instead put his energy on the piste, where he rigorously trains as captain of the Blackmore fencing team.\n\nHowever, at the end of the day Apollo does not fret too much on the tedium of life in New York. He knows that eventually the time will come when his father will call on him to come home and he will get to show that he is worthy of wielding his family's ancestral blade."
     },
     {
+        "name": "Baba",
+        "tags": [
+            "Cackly",
+            "Beady",
+            "Hexing"
+        ],
+        "abilities": [
+            "Threadsap",
+            "Granny Long Legs",
+            "Baba's Brew",
+            "Feed The Birds"
+        ],
+        "icon": "Baba.png",
+        "background": "Baba.png",
+        "lore": "",
+        "new": true
+    },
+    {
         "name": "Bebop",
         "tags": [
             "Hook",
@@ -100,6 +118,24 @@
         "icon": "Celeste.png",
         "background": "Celeste.png",
         "lore": "Even in a world of magic, some things are still rare and unusual. So what is a unicorn to do?  Announce her presence to the world and potentially have poachers looking to saw off her horn? Or hide in plain sight at a Coney Island Side Show where most folk would assume her appearance was just part of an act?\n\nOver the years \"The Dazzling Celeste\" has grown into one of the more popular attractions on Coney, and while the applause from a cheering audience is appreciated; what keeps her waking up in the morning is the found family she's made at work.\n\nKeruba the Mermaid.\n\nBlockhead Lenny.\n\nChickenwing.\n\nTed.\n\nThese were her people.  So when she discovered that one of her own sold part of their soul in order to cover a gambling debt, Celeste knew it was time to step out of the shadows and do whatever it takes to get it back.  Is revealing her power to The Patrons a risk?  Yes.  But that's tomorrow's problem... her family needs help today."
+    },
+    {
+        "name": "Deadman Danny",
+        "tags": [
+            "Reckless",
+            "High-Flying",
+            "Explosive"
+        ],
+        "abilities": [
+            "Strix Salvo",
+            "Chimera Mk1",
+            "Jettison Fuel",
+            "Close The Deal"
+        ],
+        "icon": "Deadman Danny.png",
+        "background": "Deadman Danny.png",
+        "lore": "",
+        "new": true
     },
     {
         "name": "Doorman",
@@ -374,6 +410,24 @@
         "lore": "Mo and Krill are members of The Tunnel Rats, a group that help facilitate illicit trade and commerce between the boroughs thanks to a network of underground tunnels.  But while most denizens of the New York underworld respect the work The Rats do, every once in a while a gang tries to exploit the tunnel system for personal vendettas...that's when Mo and Krill step in and remind the city what happens to those who disrespect their hospitality."
     },
     {
+        "name": "Nurse Harrow",
+        "tags": [
+            "Strict",
+            "Terrifying",
+            "Savior"
+        ],
+        "abilities": [
+            "Leech Therapy",
+            "Wretched Vapors",
+            "Healing Needles",
+            "Lurking Terrors"
+        ],
+        "icon": "Nurse Harrow.png",
+        "background": "Nurse Harrow.png",
+        "lore": "",
+        "new": true
+    },
+    {
         "name": "Paige",
         "tags": [
             "Helpful",
@@ -423,6 +477,24 @@
         "icon": "Pocket.png",
         "background": "Pocket.png",
         "lore": "Arin Fairfax, the eldest heir to Fairfax Industries, has been living in hiding for the past 5 years after being shot and left for dead on their 18th birthday.  Arin doesn't know who is trying to keep them from taking control of their parent's company... but in the avarice fueled viper's nest that is Fairfax Industries it could be anyone.\n\nTaking on the name \"Pocket\", Arin desperately wants to keep their true identity a secret… not only for their own protection; but because they want to forge their own identity separate from their parents."
+    },
+    {
+        "name": "Rat King",
+        "tags": [
+            "Scrappy",
+            "Regal",
+            "Tenacious"
+        ],
+        "abilities": [
+            "Scrap Grenade",
+            "Rat Swarm",
+            "Royal Pestments",
+            "Rule, Ratannia!"
+        ],
+        "icon": "Rat King.png",
+        "background": "Rat King.png",
+        "lore": "",
+        "new": true
     },
     {
         "name": "Rem",
@@ -510,6 +582,24 @@
         "lore": "Henry's parents told him he was too young and impulsive to mess with real magic, and so they gave him a deck of cards to play with.  He took to sleight of hand naturally and soon was dazzling his classmates with fantastic feats of illusions that were done without mystic artifacts or incantation.\n\nWhen he was in high school he met Savannah, and their mutual love of stage magic sparked a whirlwind romance.  Soon they fell in love and created an act together.  Obviously they were meant to be; and so at prom, Henry proposed to Savannah and they married soon after graduation.\n\nUnsurprisingly both sets of parents were not thrilled at this prospect, but Henry and Savannah knew they were soulmates.  And so they cemented their love for one another by having a blood mystic bind their souls for eternity.\n\nWhen an on-stage accident claimed both their lives, no one was sure who to blame.  Henry claims Savannah was out of position.  Savannah says Henry didn't wait for his cue.  But one thing's for sure, since their souls are tied to each other neither one of them have been able to move on.  Now a bickering pair of ghosts, Henry and Savannah need to work together if they want to have any chance of undoing their eternal union."
     },
     {
+        "name": "Solomon",
+        "tags": [
+            "Strategist",
+            "Focused",
+            "Checkmate"
+        ],
+        "abilities": [
+            "Setup Bishop",
+            "Kingside Knight",
+            "Rook Battery",
+            "Develop Queen"
+        ],
+        "icon": "Solomon.png",
+        "background": "Solomon.png",
+        "lore": "",
+        "new": true
+    },
+    {
         "name": "Venator",
         "tags": [
             "Devout",
@@ -559,6 +649,24 @@
         "icon": "Vindicta.png",
         "background": "Vindicta.png",
         "lore": "A victim of John Hathorne during the Salem Witch Trials, Vindicta got a second chance of life when her spirit was brought back to the mortal plane during the first Maelstrom (the event that introduced the supernatural to the public at large).\n\nWaging a one ghost war against \"The Friends of Humanity\", a neo inquisition formed by Hathorne's descendants; Vindicta looks to keep the supernatural safe from Hathorne's ilk, and she isn't afraid to stack as many bodies as needed to do it."
+    },
+    {
+        "name": "Violet",
+        "tags": [
+            "Ambitious",
+            "Nimble",
+            "Creative"
+        ],
+        "abilities": [
+            "Living Ink",
+            "Flow State",
+            "Still Life",
+            "Abstract Landscape"
+        ],
+        "icon": "Violet.png",
+        "background": "Violet.png",
+        "lore": "",
+        "new": true
     },
     {
         "name": "Viscous",

@@ -7,9 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "update:ability-data": "node scripts/updateAbilityDetails.mjs",
+    "dub:voice-sample": "node scripts/dubVoiceSample.mjs"
   },
   "dependencies": {
+    "@elevenlabs/elevenlabs-js": "^2.74.0",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
     "react": "^19.2.5",

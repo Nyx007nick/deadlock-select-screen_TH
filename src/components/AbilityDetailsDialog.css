@@ -1,0 +1,320 @@
+.ability-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(1, 4, 8, 0.82);
+  backdrop-filter: blur(8px);
+  animation: ability-dialog-backdrop-in 180ms ease-out both;
+}
+
+.ability-dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(44rem, 100%);
+  max-height: min(88vh, 54rem);
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--ability-accent) 70%, white 8%);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--ability-accent) 16%, transparent), transparent 45%),
+    rgba(13, 15, 21, 0.98);
+  box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.7), 0 0 2rem color-mix(in srgb, var(--ability-accent) 20%, transparent);
+  color: #fff7e8;
+  animation: ability-dialog-in 220ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.ability-dialog-backdrop.is-closing {
+  animation: ability-dialog-backdrop-in 160ms ease-in reverse both;
+}
+
+.ability-dialog-backdrop.is-closing .ability-dialog {
+  animation: ability-dialog-in 160ms ease-in reverse both;
+}
+
+html[lang="th"] .ability-dialog {
+  font-family: var(--font-ui);
+  font-weight: 500;
+}
+
+html[lang="th"] .ability-dialog h2,
+html[lang="th"] .ability-dialog h3 {
+  font-family: var(--font-display);
+  font-weight: 900;
+}
+
+.ability-dialog-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.75rem;
+  z-index: 1;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  cursor: pointer;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.ability-dialog-close:hover,
+.ability-dialog-close:focus-visible {
+  border-color: var(--ability-accent);
+  outline: 2px solid var(--ability-accent);
+  outline-offset: 2px;
+}
+
+.ability-dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 4rem 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ability-dialog-icon {
+  flex: 0 0 auto;
+  width: clamp(3.5rem, 12vw, 5.5rem);
+  aspect-ratio: 1;
+  padding: 0.35rem;
+  border: 1px solid color-mix(in srgb, var(--ability-accent) 75%, transparent);
+  background: color-mix(in srgb, var(--ability-accent) 30%, #090b10);
+  object-fit: contain;
+}
+
+.ability-dialog-eyebrow {
+  margin: 0 0 0.2rem;
+  color: color-mix(in srgb, var(--ability-accent) 75%, white);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ability-dialog-header h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+html[lang="th"] .ability-dialog-header h2 {
+  line-height: 1.35;
+  padding-block: 0.05em;
+}
+
+.ability-dialog-original-name {
+  margin: 0.25rem 0 0;
+  color: rgba(255, 247, 232, 0.62);
+  font-size: 0.85rem;
+}
+
+.ability-dialog-selector {
+  display: flex;
+  gap: 0.55rem;
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ability-dialog-selector button {
+  display: grid;
+  width: 2.9rem;
+  aspect-ratio: 1;
+  padding: 0.25rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+}
+
+.ability-dialog-selector button.active,
+.ability-dialog-selector button:hover,
+.ability-dialog-selector button:focus-visible {
+  border-color: var(--ability-accent);
+  background: color-mix(in srgb, var(--ability-accent) 35%, transparent);
+  outline: none;
+}
+
+.ability-dialog-selector img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ability-dialog-body {
+  min-height: 8rem;
+  padding: 1.25rem 1.5rem;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.ability-dialog-body h3 {
+  margin: 0 0 0.7rem;
+  color: color-mix(in srgb, var(--ability-accent) 78%, white);
+  font-size: 1rem;
+}
+
+.ability-dialog-description {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-left: 2px solid var(--ability-accent);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ability-dialog-description p {
+  margin: 0;
+  color: rgba(255, 247, 232, 0.75);
+  white-space: pre-line;
+}
+
+.ability-dialog-body p {
+  line-height: 1.55;
+}
+
+html[lang="th"] .ability-dialog-body p,
+html[lang="th"] .ability-dialog-source-details,
+html[lang="th"] .ability-dialog-footer {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.ability-dialog-translation-note,
+.ability-dialog-message {
+  color: rgba(255, 247, 232, 0.78);
+}
+
+.ability-dialog-source-details {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 247, 232, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  list-style: none;
+}
+
+.ability-dialog-source-details li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0.55rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.ability-dialog-source-details li strong {
+  flex: 0 0 auto;
+  color: #fff;
+  text-align: right;
+}
+
+.ability-dialog-upgrades {
+  margin-top: 1.25rem;
+}
+
+.ability-dialog-upgrade {
+  margin-top: 0.65rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.ability-dialog-upgrade h4 {
+  margin: 0 0 0.35rem;
+  color: color-mix(in srgb, var(--ability-accent) 78%, white);
+  font-size: 0.95rem;
+}
+
+.ability-dialog-upgrade p {
+  margin: 0;
+  color: rgba(255, 247, 232, 0.78);
+  white-space: pre-line;
+}
+
+.ability-dialog-updated {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: rgba(255, 247, 232, 0.48);
+  font-size: 0.75rem;
+}
+
+.ability-dialog-message button {
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--ability-accent);
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.ability-dialog-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.85rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: right;
+}
+
+.ability-dialog-footer a {
+  color: color-mix(in srgb, var(--ability-accent) 75%, white);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ability-dialog-footer a:hover,
+.ability-dialog-footer a:focus-visible {
+  text-decoration: underline;
+}
+
+@keyframes ability-dialog-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ability-dialog-in {
+  from { opacity: 0; transform: translateY(0.75rem) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 600px) {
+  .ability-dialog-backdrop {
+    padding: 0.65rem;
+  }
+
+  .ability-dialog {
+    max-height: 92vh;
+  }
+
+  .ability-dialog-header {
+    gap: 0.75rem;
+    padding: 1rem 3.5rem 1rem 1rem;
+  }
+
+  .ability-dialog-selector,
+  .ability-dialog-body {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .ability-dialog-source-details li {
+    gap: 0.5rem;
+    font-size: 0.88rem;
+  }
+
+  .ability-dialog-footer {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ability-dialog-backdrop,
+  .ability-dialog {
+    animation-duration: 1ms;
+  }
+}

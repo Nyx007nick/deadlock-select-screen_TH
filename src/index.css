@@ -31,9 +31,64 @@
   font-weight: 600;
 }
 
+:root {
+  --font-display: "Kanit", "Leelawadee UI", "Noto Sans Thai", Tahoma, sans-serif;
+  --font-ui: "Kanit", "Leelawadee UI", "Noto Sans Thai", Tahoma, sans-serif;
+}
+
 * {
   box-sizing: border-box;
     font-family: "Pulp";
+}
+
+html[lang="th"] :is(#screen, .loading-screen) {
+  font-family: var(--font-ui);
+  font-weight: 600;
+}
+
+html[lang="th"] :is(#screen, .loading-screen) * {
+  font-family: var(--font-ui);
+}
+
+html[lang="th"] .loading-screen h1,
+html[lang="th"] .character-selection-title h1 {
+  line-height: 1.2;
+}
+
+html[lang="th"] .play-button p {
+  line-height: 1.3;
+}
+
+html[lang="th"] .character-cell-guide-panel p {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+html[lang="th"] #screen .player-character-info-name-text {
+  height: auto;
+  max-height: none;
+  min-height: 1.2em;
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 4.2cqw, 4rem);
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.1;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  -webkit-text-stroke: 0.025em currentColor;
+}
+
+html[lang="th"] .player-character-info-tags-container {
+  gap: 0.4cqw;
+}
+
+html[lang="th"] .player-character-info-tag {
+  padding: 0.15em 0.35em;
+  font-size: clamp(0.5rem, 0.9cqw, 0.9rem);
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 
@@ -139,6 +194,39 @@ body {
   font-size: .75cqw;
 }
 
+.language-switch{
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  z-index: 12;
+  display: flex;
+  padding: .2cqw;
+  border: solid 1px rgba(220, 220, 220, .55);
+  border-radius: 4px;
+  background-color: rgba(12, 14, 18, .82);
+  backdrop-filter: blur(6px);
+}
+
+.language-switch button{
+  min-width: 3.5cqw;
+  padding: .35cqw .65cqw;
+  border: none;
+  background: transparent;
+  color: #ddd;
+  cursor: pointer;
+  font-size: max(10px, .9cqw);
+}
+
+.language-switch button.active{
+  background-color: #bcd1c9;
+  color: #10130d;
+}
+
+.language-switch button:focus-visible{
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
 
 .top-bar{
   position: absolute;
@@ -161,7 +249,7 @@ body {
 
 .character-selection {
   position: relative;
-  width: 37%;
+  width: 42%;
   height: 100%;
   padding-left: 2.5%;
   padding-top: 2%;
@@ -219,7 +307,7 @@ content: "";
 .characters-grid {
   display: grid;
 
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   grid-template-rows: auto;
   gap: .8cqmin;
   width: 100%;
@@ -246,6 +334,35 @@ content: "";
   border-radius: 5px;
   cursor: pointer;
 
+}
+
+.character-cell.new {
+  border-color: #0a5e41;
+}
+
+.character-cell.locked {
+  filter: brightness(.3);
+}
+
+.character-cell-newtag {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 .1cqw .1cqw;
+  background-color: #3bd4a2;
+}
+
+.character-cell-newtag p {
+  margin: 0;
+  color: #16402f;
+  text-align: center;
+  font-size: .6cqw;
+  font-weight: 700;
 }
 
 .character-cell::after {
@@ -594,7 +711,7 @@ content: "";
 }
 
 .play-button p{
-    font-family: "Oracle" !important;
+    font-family: "Oracle";
 }
 
 .play-button.inactive{
@@ -686,6 +803,20 @@ content: "";
   max-height: 8cqw;
   margin: 0 auto;
   width: 100%;
+}
+
+.player-character-info-name-text {
+  color: #fff7e8;
+  font-family: "Oracle", "Pulp", "Leelawadee UI", "Noto Sans Thai", Tahoma, sans-serif;
+  font-size: 4cqw;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 0.08cqw 0.12cqw 0 black, 0 0 0.5cqw black;
+  -webkit-text-stroke: 0.015em currentColor;
+  white-space: nowrap;
 }
 
 .player-character-info-tags-container {
@@ -793,6 +924,14 @@ content: "";
   border-radius: 50%;
   padding: 1cqmin;
   background-color: color-mix(in srgb, currentColor 90%, black);
+  border: 0;
+  display: grid;
+  place-items: center;
+}
+
+.player-character-info-skill:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
 }
 
 .player-character-info-skill img {

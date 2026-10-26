@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { div } from "three/tsl"
 
-export function Character({ character, character_index, priority, toggleCharacter, change_character_priority, isSelected, selectionDone, play_hover, onEnter, onLeave, setDisplayedCharacter, play_select_clip, pressedKeys}) {
+export function Character({ character, displayName, character_index, priority, toggleCharacter, change_character_priority, isSelected, selectionDone, play_hover, onEnter, onLeave, setDisplayedCharacter, play_select_clip, pressedKeys, t}) {
 
     const [isHovered, setIsHovered] = useState(false)
 
@@ -60,23 +60,28 @@ export function Character({ character, character_index, priority, toggleCharacte
     return (
         <div className="character-cell-container">
 
-            <div key={character.name} title={character.name} onPointerEnter={setDisplayCharacter} onPointerLeave={() => {
+            <div key={character.name} title={displayName} aria-label={displayName} onPointerEnter={setDisplayCharacter} onPointerLeave={() => {
                 setIsHovered(false),
                 onLeave(character_index)
             }} onPointerDown={handleClick} onContextMenu={(e) => e.preventDefault()}
-                className={`character-cell  ${isSelected ? "selected" : ""} 
+                className={`character-cell ${character.new ? "new" : ""} ${character.locked ? "locked" : ""} ${isSelected ? "selected" : ""}
                     ${selectionDone ? (isSelected ? "done-selected" : "done-unselected") : ""}
                     ${isHovered ? "hovered" : ""}
                     ${priority === 1 ? "priority" : priority >= 2 ? "highpriority" : ""}`} >
 
-                <img src={`${import.meta.env.VITE_ASSETS_SOURCE}icons/${character.icon}`}></img>
+                <img alt={displayName} src={`${import.meta.env.VITE_ASSETS_SOURCE}icons/${character.icon}`}></img>
+                {character.new && (
+                    <div className="character-cell-newtag">
+                        <p>{t("NEW")}</p>
+                    </div>
+                )}
                 {isHovered && (
                     <img className="character-cell-fire" src="fire.gif"></img>
 
                 )}
 
                 {isSelected && priority == 0 && (
-                    <p className="character-cell-in-roster">IN ROSTER</p>
+                    <p className="character-cell-in-roster">{t("IN ROSTER")}</p>
                 )}
 
                 {priority > 0 && !isHovered && (
@@ -101,7 +106,7 @@ export function Character({ character, character_index, priority, toggleCharacte
                                 ))}
                             </div>
 
-                            <p>{`${priority == 2 ? "HIGH" : ""} ${priority >= 3 && priority <= 5 ? "ULTRA HIGH" : ""} ${priority > 5 ? "I ONLY WANT TO PLAY THIS CHARACTER" : ""} PRIORITY`}</p>
+                            <p>{t(priority === 2 ? "HIGH PRIORITY" : priority >= 3 && priority <= 5 ? "ULTRA HIGH PRIORITY" : priority > 5 ? "I ONLY WANT TO PLAY THIS CHARACTER PRIORITY" : "PRIORITY")}</p>
                         </div>
 
                     </>
@@ -118,19 +123,19 @@ export function Character({ character, character_index, priority, toggleCharacte
                         <span>
 
                             <img src="mouse1.svg"></img>
-                            <p>Remove from Roster</p>
+                            <p>{t("Remove from Roster")}</p>
 
                         </span>
 
                         <span>
                             <img src="mouse2.svg"></img>
-                            <p>Make High Priority</p>
+                            <p>{t("Make High Priority")}</p>
 
                         </span>
 
                         <span>
                             <img src="mouse3.svg"></img>
-                            <p>Avoid Hero</p>
+                            <p>{t("Avoid Hero")}</p>
 
                         </span>
 
