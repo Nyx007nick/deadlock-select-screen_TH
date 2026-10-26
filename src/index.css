@@ -331,7 +331,7 @@ content: "";
   margin: 0;
   border: solid .35cqmin rgb(60, 60, 60);
   background-color: rgb(40, 40, 40);
-  border-radius: 5px;
+  border-radius: .1cqw;
   cursor: pointer;
 
 }
@@ -376,9 +376,6 @@ content: "";
   background-color: black;
   background: linear-gradient(to bottom, transparent 70%, rgba(0, 0, 0, 0.6));
   pointer-events: none;
-  filter: blur(0.2px);
-
-
 }
 
 .character-cell.hovered {
@@ -705,7 +702,7 @@ content: "";
   border: none;
   background-color: transparent;
 
-  padding: 7% 13%;
+  padding: 6% 13%;
   color: white;
 
 }
