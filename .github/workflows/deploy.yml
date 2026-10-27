@@ -39,6 +39,10 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Include standalone Rake demo
+        run: |
+          mkdir -p dist/rake-demo
+          cp rake-demo/index.html dist/rake-demo/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v6
       - name: Upload artifact

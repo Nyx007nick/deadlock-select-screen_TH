@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Standalone recreation of Mina's Rake ability card, based on the Deadlock Wiki.">
+  <title>Mina — Rake | Deadlock Ability Card</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: #171716;
+      color: #eee9df;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      --panel: #222220;
+      --panel-raised: #2b2a28;
+      --border: #484642;
+      --purple: #bc8ee8;
+      --green: #70dc88;
+      --muted: #aaa69d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      padding: clamp(12px, 4vw, 40px);
+      background:
+        radial-gradient(ellipse at 50% 0, #34302b 0, transparent 56%),
+        #171716;
+    }
+
+    main {
+      width: min(100%, 560px);
+      margin: 0 auto;
+    }
+
+    .ability-card {
+      overflow: hidden;
+      border: 1px solid #494641;
+      background: #1d1d1b;
+      box-shadow: 0 16px 48px #0008;
+    }
+
+    .ac-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: start;
+      gap: 14px;
+      padding: 18px 20px 14px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(110deg, #302e2a, #242321 68%);
+    }
+
+    .ac-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      margin: 0;
+      color: #f0eee8;
+      font-size: 24px;
+      font-weight: 750;
+      letter-spacing: .01em;
+    }
+
+    .ac-icon {
+      display: block;
+      flex: 0 0 45px;
+      width: 45px;
+      height: 45px;
+      border: 1px solid #66615a;
+      background: #171716;
+    }
+
+    .ac-icon img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .ac-header-attrs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 7px;
+    }
+
+    .ability-headerattr {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 32px;
+      padding: 5px 9px;
+      border: 1px solid #44413d;
+      background: #191918;
+      color: #d7d2c8;
+      font-size: 13px;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .ability-headerattr img {
+      width: 19px;
+      height: 19px;
+      object-fit: contain;
+    }
+
+    .ac-info-section {
+      padding: 16px 20px 19px;
+    }
+
+    .ac-info-desc {
+      margin: 0 0 16px;
+      color: #e2ded6;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .ac-info-desc p { margin: 0; }
+    .ac-info-desc p + p { margin-top: 10px; }
+    .dim { color: #bbb6ad; }
+    .spirit-text { color: #d0a6ed; font-weight: 700; }
+    .heal-text { color: #79e08e; font-weight: 700; }
+
+    .ac-info-main {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .ability-mainbox {
+      position: relative;
+      display: flex;
+      min-width: 0;
+      min-height: 96px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 12px;
+      border: 1px solid #4b3b58;
+      background: linear-gradient(145deg, #322838, #242126);
+      text-align: center;
+    }
+
+    .ability-mainbox--hero-hit {
+      border-color: #494640;
+      background: linear-gradient(145deg, #302f2c, #242321);
+    }
+
+    .ability-mainbox--wide { grid-column: 1 / -1; }
+
+    .ac-mainbox-title {
+      align-self: flex-start;
+      color: #c3beb4;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .ac-mainbox-value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      color: #f2eee6;
+      font-size: 24px;
+      font-weight: 750;
+      line-height: 1;
+    }
+
+    .ac-mainbox-value img {
+      width: 19px;
+      height: 19px;
+      object-fit: contain;
+    }
+
+    .ability-scaling {
+      position: absolute;
+      top: 8px;
+      right: 9px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .ability-scaling img {
+      width: 23px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    .ac-mainbox-label {
+      color: #c6c1b8;
+      font-size: 12px;
+      line-height: 1.25;
+    }
+
+    .ability-mainbox--damage .ac-mainbox-value img,
+    .ability-mainbox--missing .ac-mainbox-value img {
+      filter: brightness(0) saturate(100%) invert(65%) sepia(24%) saturate(1440%) hue-rotate(226deg) brightness(96%) contrast(91%);
+    }
+
+    .ability-mainbox--heal .ac-mainbox-value img {
+      filter: brightness(0) saturate(100%) invert(69%) sepia(59%) saturate(566%) hue-rotate(77deg) brightness(99%) contrast(93%);
+    }
+
+    .ac-upgrades {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .ability-upgrade {
+      display: flex;
+      min-width: 0;
+      min-height: 124px;
+      flex-direction: column;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid #4b4842;
+      border-radius: 0;
+      background: #282724;
+      color: inherit;
+      cursor: pointer;
+      font: inherit;
+      text-align: center;
+      transition: background-color .18s ease, border-color .18s ease, transform .18s ease;
+    }
+
+    .ability-upgrade:hover,
+    .ability-upgrade:focus-visible {
+      z-index: 1;
+      border-color: #9272ac;
+      background: #342d39;
+      transform: translateY(-2px);
+    }
+
+    .ability-upgrade:focus-visible {
+      outline: 2px solid #c9a8e7;
+      outline-offset: 2px;
+    }
+
+    .ability-upgrade.selected {
+      border-color: #8d68a9;
+      background: #382a42;
+    }
+
+    .ability-upgrade.locked {
+      color: #aaa59b;
+    }
+
+    .ability-upgrade-header {
+      display: flex;
+      min-height: 36px;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 6px;
+      border-bottom: 1px solid #504a53;
+      background: #302833;
+      color: #f3e9fb;
+      font-size: 14px;
+      font-weight: 750;
+      transition: background-color .18s ease;
+    }
+
+    .ability-upgrade.selected .ability-upgrade-header { background: #34273e; }
+
+    .ability-upgrade-header img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    .ac-upgrade-desc {
+      display: grid;
+      flex: 1;
+      align-content: center;
+      gap: 6px;
+      padding: 12px 8px;
+      color: #e5dfd5;
+      font-size: 12px;
+      font-weight: 650;
+      line-height: 1.45;
+    }
+
+    .upgrade-line { display: block; }
+    .upgrade-line strong { color: #fff; }
+    .upgrade-heal { color: var(--green); }
+    .upgrade-spirit { color: var(--purple); }
+
+    .upgrade-status {
+      min-height: 1.2em;
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .source-notes {
+      margin-top: 22px;
+      border-top: 1px solid #3c3a36;
+      color: #c8c3b9;
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .source-notes summary {
+      padding: 12px 0;
+      color: #e2d4ed;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .source-notes table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .source-notes th,
+    .source-notes td {
+      padding: 7px 8px;
+      border: 1px solid #3c3a36;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .source-notes th { color: #ece5d9; }
+    .source-notes a { color: #c9a8e7; }
+
+    @media (max-width: 520px) {
+      body { padding: 12px; }
+      .ac-header {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 14px;
+      }
+      .ac-header-attrs { justify-content: flex-start; }
+      .ac-info-section { padding: 14px; }
+      .ability-mainbox { min-height: 88px; padding: 10px 6px; }
+      .ac-upgrades { gap: 6px; }
+      .ability-upgrade { min-height: 138px; }
+      .ability-upgrade-header { gap: 4px; font-size: 12px; }
+      .ac-upgrade-desc { padding: 10px 5px; font-size: 11px; }
+      .source-notes { overflow-wrap: anywhere; }
+    }
+
+    @media (max-width: 360px) {
+      .ac-title { font-size: 21px; }
+      .ac-info-main { gap: 7px; }
+      .ac-mainbox-value { font-size: 20px; }
+      .ac-mainbox-label { font-size: 11px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="ability-card" id="rake-card" aria-labelledby="rake-title">
+      <header class="ac-header">
+        <h1 class="ac-title" id="rake-title">
+          <span class="ac-icon">
+            <img src="https://cdn.deadlock.wiki/thumb/Rake.png/45px-Rake.png" alt="" width="45" height="45">
+          </span>
+          <span>Rake</span>
+        </h1>
+        <div class="ac-header-attrs" aria-label="Ability stats">
+          <div class="ability-headerattr">
+            <img src="https://cdn.deadlock.wiki/thumb/CastRange.png/20px-CastRange.png" alt="">
+            <span>10m</span>
+          </div>
+          <div class="ability-headerattr">
+            <img src="https://cdn.deadlock.wiki/thumb/AttributeIconTechCooldown.png/20px-AttributeIconTechCooldown.png" alt="">
+            <span id="cooldown-value">16s</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="ac-info-section" aria-label="Rake details">
+        <div class="ac-info-desc">
+          <p><span class="dim">Active:</span> Slash with your umbrella, dealing <span class="spirit-text">spirit damage</span>, increasing with the target's missing health. Receive a <span class="heal-text">heal</span> for every target killed.</p>
+          <p><span class="dim">Passive:</span> Holding <strong>Zoom / alt-fire</strong> causes you to briefly float. Rake executes non-heroes below 60 health.</p>
+        </div>
+
+        <div class="ac-info-main">
+          <div class="ability-mainbox ability-mainbox--damage">
+            <span class="ability-scaling" aria-label="Scales with Spirit Power">
+              <img src="https://cdn.deadlock.wiki/thumb/Spirit_scaling.png/28px-Spirit_scaling.png" alt="">
+              <span>×1</span>
+            </span>
+            <div class="ac-mainbox-value">
+              <img src="https://cdn.deadlock.wiki/thumb/Spirit_damage.png/18px-Spirit_damage.png" alt="">
+              <span id="damage-value">60</span>
+            </div>
+            <div class="ac-mainbox-label">Damage</div>
+          </div>
+
+          <div class="ability-mainbox ability-mainbox--missing ability-mainbox--hero-hit">
+            <div class="ac-mainbox-title">On Hero Hit:</div>
+            <div class="ac-mainbox-value">
+              <img src="https://cdn.deadlock.wiki/thumb/Spirit_damage.png/18px-Spirit_damage.png" alt="">
+              <span id="missing-health-value">6%</span>
+            </div>
+            <div class="ac-mainbox-label">Missing Health as Damage</div>
+          </div>
+
+          <div class="ability-mainbox ability-mainbox--heal ability-mainbox--wide">
+            <div class="ac-mainbox-title">On Kill:</div>
+            <span class="ability-scaling" aria-label="Scales with Spirit Power">
+              <img src="https://cdn.deadlock.wiki/thumb/Spirit_scaling.png/28px-Spirit_scaling.png" alt="">
+              <span id="heal-scaling-value">×0.3</span>
+            </span>
+            <div class="ac-mainbox-value">
+              <img src="https://cdn.deadlock.wiki/thumb/Healing.png/18px-Healing.png" alt="">
+              <span id="heal-value">25</span>
+            </div>
+            <div class="ac-mainbox-label">Heal Per Kill</div>
+          </div>
+        </div>
+
+        <div class="ac-upgrades" role="group" aria-label="Ability upgrades">
+          <button class="ability-upgrade" type="button" data-upgrade="1" aria-pressed="false">
+            <span class="ability-upgrade-header">
+              <img src="https://cdn.deadlock.wiki/thumb/Ability_point.png/15px-Ability_point.png" alt="">
+              <span>1</span>
+            </span>
+            <span class="ac-upgrade-desc">
+              <span class="upgrade-line"><strong>+60</strong> Damage</span>
+            </span>
+          </button>
+          <button class="ability-upgrade" type="button" data-upgrade="2" aria-pressed="false">
+            <span class="ability-upgrade-header">
+              <img src="https://cdn.deadlock.wiki/thumb/Ability_point.png/15px-Ability_point.png" alt="">
+              <span>2</span>
+            </span>
+            <span class="ac-upgrade-desc">
+              <span class="upgrade-line upgrade-heal"><strong>+30</strong> Heal per Kill</span>
+              <span class="upgrade-line"><strong>-8s</strong> Cooldown</span>
+            </span>
+          </button>
+          <button class="ability-upgrade" type="button" data-upgrade="5" aria-pressed="false">
+            <span class="ability-upgrade-header">
+              <img src="https://cdn.deadlock.wiki/thumb/Ability_point.png/15px-Ability_point.png" alt="">
+              <span>5</span>
+            </span>
+            <span class="ac-upgrade-desc">
+              <span class="upgrade-line"><strong>+7%</strong> Missing health damage</span>
+              <span class="upgrade-line">Increased Heal per Kill <span class="upgrade-spirit">Spirit scaling</span></span>
+            </span>
+          </button>
+        </div>
+        <p class="upgrade-status" id="upgrade-status" aria-live="polite">Select an upgrade to apply it and all lower tiers.</p>
+      </section>
+    </article>
+
+    <details class="source-notes">
+      <summary>Source audit, attribution, and editing notes</summary>
+      <p>The wiki's Mina source was checked directly. Its raw Wikitext calls <code>{{AbilitySection}}</code>; the rendered Mina page/API supplies the actual Rake markup, displayed values, and image URLs. This standalone file recreates only the Rake card and does not embed or hotlink the whole wiki page.</p>
+      <table>
+        <thead><tr><th>Part</th><th>Source / implementation</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>HTML structure</td>
+            <td>Adapted from rendered Mina Rake markup: <code>ability-card</code>, <code>ac-header</code>, <code>ac-info-section</code>, <code>ability-mainbox</code>, and <code>ability-upgrade</code>. Trimmed and rebuilt for a single standalone card.</td>
+          </tr>
+          <tr>
+            <td>CSS</td>
+            <td>Wiki class names and visual cues were inspected from the rendered page's TemplateStyles. Responsive styling and this page's card layout are newly written; selected hover/active colors and motion are based on the verified <a href="https://deadlock.wiki/MediaWiki:Gadget-ability-upgrades.css?action=raw">ability-upgrades CSS</a>.</td>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td>Vanilla JS reproduces the inspected <a href="https://deadlock.wiki/MediaWiki:Gadget-ability-upgrades.js?action=raw">wiki upgrade gadget</a> behavior: clicking a tier applies it plus lower tiers; clicking an active tier removes it and higher tiers. Numeric stats update locally.</td>
+          </tr>
+          <tr>
+            <td>Ability text and values</td>
+            <td>Checked against <a href="https://deadlock.wiki/Mina#Rake">Mina — Rake</a> and the rendered MediaWiki API. The visible Tier 5 description does not state a Spirit-scaling amount; the displayed ×1.5 is calculated from this project's local ability data (+1.2 added to the base ×0.3).</td>
+          </tr>
+          <tr>
+            <td>Images</td>
+            <td>All image URLs below were found in the rendered Rake markup: <code>Rake.png</code>, <code>CastRange.png</code>, <code>AttributeIconTechCooldown.png</code>, <code>Spirit_scaling.png</code>, <code>Spirit_damage.png</code>, <code>Healing.png</code>, and <code>Ability_point.png</code>, served from <code>cdn.deadlock.wiki</code>.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Source material: <a href="https://deadlock.wiki/Mina?action=raw">Mina Wikitext</a>, <a href="https://deadlock.wiki/api.php?action=parse&amp;page=Mina&amp;section=2&amp;prop=text&amp;format=json">rendered Abilities section</a>, and the linked CSS/JS pages. The wiki is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; this adaptation is attributed accordingly. Game imagery remains owned by its respective rights holders.</p>
+      <p><strong>Open:</strong> open <code>rake-demo/index.html</code> directly in Chrome/Edge. The ability card works offline except for the externally hosted wiki images. Edit the values and text in the HTML, colors/layout in the embedded <code>&lt;style&gt;</code>, and upgrade behavior in the final <code>&lt;script&gt;</code>. The project's root <code>index.html</code> remains unchanged because it is the entry point for the existing app.</p>
+    </details>
+  </main>
+
+  <script>
+    const upgradeButtons = [...document.querySelectorAll(".ability-upgrade")];
+    const cooldownValue = document.getElementById("cooldown-value");
+    const damageValue = document.getElementById("damage-value");
+    const missingHealthValue = document.getElementById("missing-health-value");
+    const healValue = document.getElementById("heal-value");
+    const healScalingValue = document.getElementById("heal-scaling-value");
+    const status = document.getElementById("upgrade-status");
+    const selected = new Set();
+    const tierOrder = [1, 2, 5];
+
+    function renderUpgrades() {
+      upgradeButtons.forEach((button) => {
+        const tier = Number(button.dataset.upgrade);
+        const active = selected.has(tier);
+        button.classList.toggle("selected", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+
+      cooldownValue.textContent = selected.has(2) ? "8s" : "16s";
+      damageValue.textContent = selected.has(1) ? "120" : "60";
+      missingHealthValue.textContent = selected.has(5) ? "13%" : "6%";
+      healValue.textContent = selected.has(2) ? "55" : "25";
+      healScalingValue.textContent = selected.has(5) ? "×1.5" : "×0.3";
+
+      const applied = tierOrder.filter((tier) => selected.has(tier));
+      status.textContent = applied.length
+        ? `Applied upgrade tiers: ${applied.join(", ")}`
+        : "Select an upgrade to apply it and all lower tiers.";
+    }
+
+    upgradeButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const tier = Number(button.dataset.upgrade);
+        const index = tierOrder.indexOf(tier);
+        if (selected.has(tier)) {
+          tierOrder.slice(index).forEach((higherTier) => selected.delete(higherTier));
+        } else {
+          tierOrder.slice(0, index + 1).forEach((lowerTier) => selected.add(lowerTier));
+        }
+        renderUpgrades();
+      });
+    });
+
+    renderUpgrades();
+  </script>
+</body>
+</html>
