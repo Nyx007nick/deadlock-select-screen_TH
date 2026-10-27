@@ -11,7 +11,7 @@ import { useHoverDelay } from "./hooks/useHoverDelay"
 
 import voice_list from "./assets/vo_list.json"
 import thaiVoiceManifest from "./assets/voiceThaiManifest.json"
-import { getAbilityName, getCharacterName, getCharacterTag } from "./assets/characterTranslations"
+import { characterNameImagesTH, getAbilityName, getCharacterName, getCharacterTag } from "./assets/characterTranslations"
 import characterLoreThai from "./assets/characterLoreThai.json"
 import { usePressedKeys } from "./hooks/usePressedKeys";
 
@@ -431,7 +431,13 @@ export function Home() {
                 {/* <model-viewer className="canvas" alt="Paradox" src="Paradox2.glb"  shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer> */}
 
                 <div className="player-character-info">
-                    {language === "EN" ? (
+                    {language === "TH" && characterNameImagesTH[characters[displayedCharacter].name] ? (
+                        <img
+                            className="player-character-info-name"
+                            alt={getCharacterName(characters[displayedCharacter].name, language)}
+                            src={`${import.meta.env.BASE_URL}hero_names_th/${characterNameImagesTH[characters[displayedCharacter].name]}.svg`}
+                        />
+                    ) : language === "EN" ? (
                         <img className="player-character-info-name" alt={characters[displayedCharacter].name} src={`${import.meta.env.VITE_ASSETS_SOURCE}names/${characters[displayedCharacter].name}.svg`}></img>
                     ) : (
                         <p className="player-character-info-name player-character-info-name-text">{getCharacterName(characters[displayedCharacter].name, language)}</p>
